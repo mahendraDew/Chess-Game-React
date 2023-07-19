@@ -7,13 +7,6 @@ import { useEffect } from 'react';
 import { useRef } from 'react';
 
 
-const container = {
-  marginTop : "2rem",
-  display: "flex",
-  justifyContent: "center",
-  alignItem: "center"
-
-}
 
 function App() {
 
@@ -29,13 +22,14 @@ function App() {
   const onDrop = ({sourceSquare, targetSquare}) => {
     let move = game.current.move({
       from: sourceSquare,
-      to: targetSquare
+      to: targetSquare,
+      promotion: "q" 
     });
       console.log(game)
-    if(move === null){
-      return;
+    if(move == null){
+      console.log("wrong move");
+      return false;
     }
-
     setFen(game.current.fen());
 
   }
@@ -46,17 +40,18 @@ function App() {
     setFen("start");
   }
 
-  var i = 1;
+ 
   return (
     <div>
+      <div className="header"><h1 className="heading">Chess Game</h1></div>
+      <div className="App">
+        
+        <Chessboard className="chessBoard" position={fen} onDrop={onDrop}/>
+
+      </div>
       {
         game.current && game.current.isGameOver() ? <div style={{textAlign:"center"}}><h1>Game Over</h1><button onClick={resetGame}>Play Again</button></div> : <span></span>
       }
-      <div className="App" style={container}>
-        
-        <Chessboard position={fen} onDrop={onDrop}/>
-
-      </div>
     </div>
     
   );
