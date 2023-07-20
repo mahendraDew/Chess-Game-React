@@ -50,8 +50,9 @@ function App() {
 
       </div>
       {
-        game.current && game.current.isGameOver() ? <div style={{textAlign:"center"}}><h1>Game Over</h1><button onClick={resetGame}>Play Again</button></div> : <span></span>
+        game.current && game.current.isGameOver() ? <div className='gameOverHeading'><h1>Game Over</h1><button className='playAgainBtm' onClick={resetGame}>Play Again</button></div> : <span></span>
       }
+      <div className="footer"><p>&copy; made by Mahendra Dewangan</p></div>
     </div>
     
   );
