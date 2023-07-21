@@ -38,6 +38,7 @@ You may also see any lint errors in the console.
 ## **Screenshots 📸**
 
 <br>
-![image](./public/chess-game-interface.jpg)
+![chess-game-interface](https://github.com/mahendraDew/Chess-Game-React/assets/98692513/2e5dd250-ef0e-4fcf-a590-17f4f01a5a9a)
+
 
 <br>
